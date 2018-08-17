@@ -1,2 +1,4 @@
-UPDATE osc.tb_recursos_osc 
-SET cd_origem_fonte_recursos_osc = (SELECT cd_origem_fonte_recursos_osc FROM syst.dc_fonte_recursos_osc WHERE cd_fonte_recursos_osc = tb_recursos_osc.cd_fonte_recursos_osc);
+UPDATE osc.tb_recursos_osc AS o
+SET cd_origem_fonte_recursos_osc = s.cd_origem_fonte_recursos_osc
+FROM syst.dc_fonte_recursos_osc AS s
+WHERE o.cd_fonte_recursos_osc = s.cd_fonte_recursos_osc
